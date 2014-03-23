@@ -19,7 +19,7 @@ def weixin_access_verify():
     return 'verification fail'
 
 
-@expose('/weixin', method=['POST'])
+@expose('/weixin', methods=['POST'])
 def customer_msg():
     if verification(request):
         data = request.POST
