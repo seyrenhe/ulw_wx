@@ -3,7 +3,7 @@
 import hashlib, time, json
 from uliweb import expose, functions
 import xml.etree.ElementTree as ET  #解析xml
-
+import utils
 
 @expose('/')
 def index():
@@ -14,9 +14,11 @@ def index():
 @expose('/weixin', methods=['GET'])
 def weixin_access_verify():
     echostr = request.args.get('echostr')
-    if verification(request) and echostr is not None:
+    if utils.verification(request) and echostr is not None:
         return echostr
     return 'verification fail'
+
+
 
 
 @expose('/weixin', methods=['POST'])
@@ -66,7 +68,7 @@ def is_text_msg(msg):
     return msg['MsgType'] == 'text'
 
 def user_subscribe_event(msg):
-    """判断是否是订阅消息"""
+    """"""
     return msg['MsgType'] == 'event' and msg['Event'] == 'subscribe'
 
 def verification(request):
