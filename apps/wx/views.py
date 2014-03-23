@@ -24,7 +24,7 @@ def weixin_access_verify():
 @expose('/weixin', methods=['POST'])
 def customer_msg():
     if verification(request):
-        data = request.POST
+        data = request.data
         msg = parse_msg(data)
         if user_subscribe_event(msg):
             return help_info(msg)
@@ -89,6 +89,17 @@ def verification(request):
         return True
     return False
 
+
+def help_info(msg):
+    return response_text_msg(msg, HELP_INFO)
+
+
+def response_text_msg(msg, content):
+    s = TEXT_MSG_TPL % (msg['FromUserName'], msg['ToUserName'],
+        str(int(time.time())), content)
+    return s
+
+
 HELP_INFO = \
 u"""
 欢迎关注奉化生活^_^各种功能还在开发中
@@ -118,7 +129,3 @@ u"""
 </xml>
 """
 
-def response_text_msg(msg, content):
-    s = TEXT_MSG_TPL % (msg['FromUserName'], msg['ToUserName'],
-        str(int(time.time())), content)
-    return s
