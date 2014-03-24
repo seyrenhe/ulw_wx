@@ -3,17 +3,11 @@ import urllib2
 from bs4 import BeautifulSoup as bs
 import hashlib, time, json
 
-_time = time.strftime('%Y%m%d',time.localtime(time.time())) # 当前时间 格式为yearmonthday
-
-
-
-
-
-
 def moviespider():
-    url = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua/3869/'
+    url1 = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua/3869/'
+    url2 = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua_yuelinjiedao/2834/'
 
-    page = urllib2.urlopen(url)
+    page = urllib2.urlopen(url1)
     soup = bs(page)
 
     original = soup.find_all(class_='table')
@@ -23,7 +17,7 @@ def moviespider():
     movie_time = []
     movie_price = []
 
-    for i in range(0,m_count):
+    for i in range(0, m_count):
         name_temp = []
         time_temp = []
         price_temp = []
@@ -47,26 +41,8 @@ def moviespider():
     return movie_list
 
 
-def verification(request):
-    """
-    接入和消息推送校验
-    """
-    signature = request.GET.get('signature')
-    timestamp = request.GET.get('timestamp')
-    nonce = request.GET.get('nonce')
-
-    token = 'seyren'
-    tmplist = [token, timestamp, nonce]
-    tmplist.sort()
-    tmpstr = ''.join(tmplist)
-    hashstr = hashlib.sha1(tmpstr).hexdigest()
-
-    if hashstr == signature:
-        return True
-    return False
-
-
 def parse_move_list(movie_list):
     for x in xrange(len(movie_list[0])):
         for y in xrange(len(movie_list[1][x])):
             return movie_list[0][x] + '\n' + movie_list[1][x][y] + movie_list[2][x][y]
+

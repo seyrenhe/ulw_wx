@@ -4,3 +4,4 @@ local_settings.ini
 .idea/
 src/sessions
 src/data
+caches/
