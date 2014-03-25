@@ -9,13 +9,13 @@ import utils
 @expose('/')
 def index():
     cache = functions.get_cache()
-    print cache.get('test', default='ss', creator=my_creator(ss))
+    print cache.get('test', default='ss', creator=my_creator)
     print cache['test']
     return '<h1>Hello, Uliweb</h1>'
 
 
-def my_creator(ss):
-    return 'test%s' % ss
+def my_creator():
+    return 'test%s'
 
 
 @expose('/weixin', methods=['GET'])

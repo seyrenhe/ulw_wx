@@ -23,7 +23,7 @@ def moviespider():
     movie_time = []
     movie_price = []
 
-    for i in range(0,m_count):
+    for i in range(0, m_count):
         name_temp = []
         time_temp = []
         price_temp = []
