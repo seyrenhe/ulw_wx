@@ -6,10 +6,6 @@ import hashlib, time, json
 _time = time.strftime('%Y%m%d',time.localtime(time.time())) # 当前时间 格式为yearmonthday
 
 
-
-
-
-
 def moviespider():
     url = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua/3869/'
 

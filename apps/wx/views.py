@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET  #解析xml
 import utils
 
 
+# uliweb cache
 @expose('/')
 def index():
     cache = functions.get_cache()
@@ -15,7 +16,7 @@ def index():
 
 
 def my_creator():
-    return 'test%s'
+    return 'test'
 
 
 @expose('/weixin', methods=['GET'])
@@ -35,7 +36,7 @@ def customer_msg():
             return help_info(msg)
         elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
             content = msg['Content']
-            if content == '今日电影':
+            if content == u'今日电影':
                 cache = functions.get_cache()
 
                 def tmovie():
