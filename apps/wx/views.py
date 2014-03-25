@@ -40,12 +40,15 @@ def customer_msg():
                 cache = functions.get_cache()
 
                 def tmovie():
+                    """动态构建函数，供cache对像使用"""
                     return utils.moviespider()
 
                 cache.get('tmovie', default='error', creator=tmovie)
                 my_movie_list = cache['tmovie']
                 recontent = utils.parse_movie_list(my_movie_list)
                 return response_text_msg(msg, recontent)
+            elif content == u'违规查询':
+                pass
 
 
             return help_info(msg)
