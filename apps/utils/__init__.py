@@ -62,7 +62,7 @@ def verification(request):
     return False
 
 
-def parse_move_list(movie_list):
+def parse_movie_list(movie_list):
     for x in xrange(len(movie_list[0])):
         for y in xrange(len(movie_list[1][x])):
             return movie_list[0][x] + '\n' + movie_list[1][x][y] + movie_list[2][x][y]

@@ -29,7 +29,7 @@ def access_verify():
 
 @expose('/weixin', methods=['POST'])
 def customer_msg():
-    if verification(request):
+    if utils.verification(request):
         data = request.data
         msg = parse_msg(data)
         if user_subscribe_event(msg):
@@ -44,7 +44,7 @@ def customer_msg():
 
                 cache.get('tmovie', default='error', creator=tmovie)
                 my_movie_list = cache['tmovie']
-                recontent = utils.parse_list(my_movie_list)
+                recontent = utils.parse_movie_list(my_movie_list)
                 return response_text_msg(msg, recontent)
 
 
