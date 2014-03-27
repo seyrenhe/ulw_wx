@@ -2,6 +2,7 @@
 import urllib2
 from bs4 import BeautifulSoup as bs
 import hashlib, time, json
+import weather
 
 _time = time.strftime('%Y%m%d',time.localtime(time.time())) # 当前时间 格式为yearmonthday
 
