@@ -53,7 +53,7 @@ def customer_msg():
             # 有天气两个字就调用天气模块
             elif content.find(u'天气') != -1:
                 cityname = content[0:-2].encode('UTF-8')
-                weatherq = utils.weather.WeathQuery(cityname)
+                weatherq = utils.weather.WeatherQuery(cityname)
                 recontent = weatherq.queryw()
                 return response_text_msg(msg, recontent)
 
