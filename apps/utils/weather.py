@@ -16,13 +16,15 @@ class WeatherQuery(object):
             print self.apiurl
             weather_json = urllib2.urlopen(self.apiurl).read()
             weather = json.loads(weather_json)
+            s = self.parse_weather_data(weather)
         except:
-            return "系统故障"
-        return self.parse_weather_data(weather)
+            return u"系统故障"
+        return s
 
-    def parse_weather_data(self, weatherdata):
+    def parse_weather_data(self, weather):
         msg = ''
-        weatherdata = weatherdata['results'][0]['weather_data']
+        weatherdata = weather['results'][0]['weather_data']
+        
         for x in weatherdata:
             msg += x['date']
             msg += x['weather']

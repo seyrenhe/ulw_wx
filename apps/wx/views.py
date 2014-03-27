@@ -27,74 +27,74 @@ def access_verify():
     return 'verification fail'
 
 
-@expose('/weixin', methods=['POST'])
-def customer_msg():
-    if utils.verification(request):
-        data = request.data
-        msg = parse_msg(data)
-        if user_subscribe_event(msg):
-            return help_info(msg)
-        elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
-            content = msg['Content']
-            if content == u'今日电影':
-                cache = functions.get_cache()
-
-                def tmovie():
-                    """动态构建函数，供cache对像使用"""
-                    return utils.moviespider()
-
-                cache.get('tmovie', default='error', creator=tmovie)
-                my_movie_list = cache['tmovie']
-                recontent = utils.parse_movie_list(my_movie_list)
-                return response_text_msg(msg, recontent)
-            elif content == u'违规查询':
-
-                pass
-            # 有天气两个字就调用天气模块
-            elif content.find(u'天气') != -1:
-                cityname = content[0:-2].encode('UTF-8')
-                weatherq = utils.weather.WeatherQuery(cityname)
-                recontent = weatherq.queryw()
-                return response_text_msg(msg, recontent)
-
-            return help_info(msg)
-
-    return 'message processing fail'
-
-
-
-
-
-
 # @expose('/weixin', methods=['POST'])
 # def customer_msg():
-#     data = request.data
-#     msg = parse_msg(data)
-#     if user_subscribe_event(msg):
-#         return help_info(msg)
-#     elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
-#         content = msg['Content']
-#         if content == u'今日电影':
-#             cache = functions.get_cache()
+#     if utils.verification(request):
+#         data = request.data
+#         msg = parse_msg(data)
+#         if user_subscribe_event(msg):
+#             return help_info(msg)
+#         elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
+#             content = msg['Content']
+#             if content == u'今日电影':
+#                 cache = functions.get_cache()
 #
-#             def tmovie():
-#                 """动态构建函数，供cache对像使用"""
-#                 return utils.moviespider()
+#                 def tmovie():
+#                     """动态构建函数，供cache对像使用"""
+#                     return utils.moviespider()
 #
-#             cache.get('tmovie', default='error', creator=tmovie)
-#             my_movie_list = cache['tmovie']
-#             recontent = utils.parse_movie_list(my_movie_list)
-#             return response_text_msg(msg, recontent)
-#         elif content == u'违规查询':
+#                 cache.get('tmovie', default='error', creator=tmovie)
+#                 my_movie_list = cache['tmovie']
+#                 recontent = utils.parse_movie_list(my_movie_list)
+#                 return response_text_msg(msg, recontent)
+#             elif content == u'违规查询':
 #
-#             pass
-#         # 有天气两个字就调用天气模块
-#         elif content.find(u'天气') != -1:
-#             cityname = content[0:-2].encode('UTF-8')  # 用unicode截取中文，再encode成utf-8编码,utf-8用1-6个字符表示一个中文字符，容易截取乱码
-#             weatherq = utils.weather.WeatherQuery(cityname)
-#             recontent = weatherq.queryw()
-#             return response_text_msg(msg, recontent)
-#     return help_info(msg)
+#                 pass
+#             # 有天气两个字就调用天气模块
+#             elif content.find(u'天气') != -1:
+#                 cityname = content[0:-2].encode('UTF-8')
+#                 weatherq = utils.weather.WeatherQuery(cityname)
+#                 recontent = weatherq.queryw()
+#                 return response_text_msg(msg, recontent)
+#
+#             return help_info(msg)
+#
+#     return 'message processing fail'
+
+
+
+
+
+
+@expose('/weixin', methods=['POST'])
+def customer_msg():
+    data = request.data
+    msg = parse_msg(data)
+    if user_subscribe_event(msg):
+        return help_info(msg)
+    elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
+        content = msg['Content']
+        if content == u'今日电影':
+            cache = functions.get_cache()
+
+            def tmovie():
+                """动态构建函数，供cache对像使用"""
+                return utils.moviespider()
+
+            cache.get('tmovie', default='error', creator=tmovie)
+            my_movie_list = cache['tmovie']
+            recontent = utils.parse_movie_list(my_movie_list)
+            return response_text_msg(msg, recontent)
+        elif content == u'违规查询':
+
+            pass
+        # 有天气两个字就调用天气模块
+        elif content.find(u'天气') != -1:
+            cityname = content[0:-2].encode('UTF-8')  # 用unicode截取中文，再encode成utf-8编码,utf-8用1-6个字符表示一个中文字符，容易截取乱码
+            weatherq = utils.weather.WeatherQuery(cityname)
+            recontent = weatherq.queryw()
+            return response_text_msg(msg, recontent)
+    return help_info(msg)
 
 
 def verification(request):
