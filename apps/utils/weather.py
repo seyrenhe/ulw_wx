@@ -33,3 +33,11 @@ class WeatherQuery(object):
             return msg
         else:
             return u'数据库中无此地名'
+        weatherdata = weather['results'][0]['weather_data']
+        
+        for x in weatherdata:
+            msg += x['date']
+            msg += x['weather']
+            msg += x['temperature']
+            msg += x['wind'] + '\n'
+        return msg
