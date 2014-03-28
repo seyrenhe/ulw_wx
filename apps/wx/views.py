@@ -35,7 +35,8 @@ def customer_msg():
         if user_subscribe_event(msg):
             return help_info(msg)
         elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
-            content = msg['Content']
+            s1 = msg['Content'].strip()
+            content = ''.join(s1.split(' '))
             if content == u'今日电影':
                 cache = functions.get_cache()
 
@@ -51,7 +52,7 @@ def customer_msg():
 
                 pass
             # 有天气两个字就调用天气模块
-            elif content.find(u'天气') != -1:
+            elif content.find(u'天气')  > 0:
                 cityname = content[0:-2].encode('UTF-8')
                 weatherq = utils.weather.WeatherQuery(cityname)
                 recontent = weatherq.queryw()
@@ -145,8 +146,7 @@ def response_text_msg(msg, content):
 
 
 HELP_INFO = \
-u"""
-欢迎关注奉化生活^_^各种功能还在开发中
+u"""欢迎关注奉化生活^_^各种功能还在开发中,输入'今日电影'可以查博纳电影放映详情，输入'地名天气'，比如'奉化天气'可以查询奉化的天气。如果好用的话请别忘了推荐给你的小伙伴哦  by Seyren
 """
 
 
