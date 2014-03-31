@@ -42,17 +42,15 @@ def customer_msg():
 
                 def tmovie():
                     """动态构建函数，供cache对像使用"""
-                    return utils.moviespider()
+                    movie_list = utils.moviespider()
+                    return response_news_msg(msg, movie_list)
 
                 cache.get('tmovie', default='error', creator=tmovie)
-                my_movie_list = cache['tmovie']
-                recontent = utils.parse_movie_list(my_movie_list)
-                return response_text_msg(msg, recontent)
+                recontent = cache['tmovie']
+                return recontent
             elif content == u'违规查询':
 
                 pass
-            elif content == u'测试':
-                return response_news_msg(msg)
             # 有天气两个字就调用天气模块
             elif content.find(u'天气')  > 0:
                 cityname = content[0:-2].encode('UTF-8')
@@ -64,58 +62,43 @@ def customer_msg():
 
     return 'message processing fail'
 
-# @expose('/weixin', methods=['POST'])
-# def customer_msg():
-#     data = request.data
-#     msg = parse_msg(data)
-#     if user_subscribe_event(msg):
-#         return help_info(msg)
-#     elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
-#         content = msg['Content']
-#         if content == u'今日电影':
-#             cache = functions.get_cache()
-#
-#             def tmovie():
-#                 """动态构建函数，供cache对像使用"""
-#                 return utils.moviespider()
-#
-#             cache.get('tmovie', default='error', creator=tmovie)
-#             my_movie_list = cache['tmovie']
-#             recontent = utils.parse_movie_list(my_movie_list)
-#             return response_text_msg(msg, recontent)
-#         elif content == u'违规查询':
-#
-#             pass
-#         elif content == u'测试':
-#             return response_news_msg(msg)
-#         # 有天气两个字就调用天气模块
-#         elif content.find(u'天气') != -1:
-#             cityname = content[0:-2].encode('UTF-8')
-#             weatherq = utils.weather.WeatherQuery(cityname)
-#             recontent = weatherq.queryw()
-#             return response_text_msg(msg, recontent)
-#
-#         return help_info(msg)
-#     return 'message processing fail'
+@expose('/weixin', methods=['POST'])
+def customer_msg():
+    data = request.data
+    msg = parse_msg(data)
+    if user_subscribe_event(msg):
+        return help_info(msg)
+    elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
+        content = msg['Content']
+        if content == u'今日电影':
+            cache = functions.get_cache()
+
+            def tmovie():
+                """动态构建函数，供cache对像使用"""
+                movie_list = utils.moviespider()
+                return response_news_msg(msg, movie_list)
+
+            cache.get('tmovie', default='error', creator=tmovie)
+            recontent = cache['tmovie']
+            # recontent = utils.parse_movie_list(my_movie_list)
+            # return response_text_msg(msg, recontent)
+            return recontent
+        elif content == u'违规查询':
+
+            pass
+        elif content == u'测试':
+            return response_news_msg(msg)
+        # 有天气两个字就调用天气模块
+        elif content.find(u'天气') != -1:
+            cityname = content[0:-2].encode('UTF-8')
+            weatherq = utils.weather.WeatherQuery(cityname)
+            recontent = weatherq.queryw()
+            return response_text_msg(msg, recontent)
+
+        return help_info(msg)
+    return 'message processing fail'
 
 
-def verification(request):
-    """
-    接入和消息推送校验
-    """
-    signature = request.GET.get('signature')
-    timestamp = request.GET.get('timestamp')
-    nonce = request.GET.get('nonce')
-
-    token = 'seyren'
-    tmplist = [signature, timestamp, nonce]
-    tmplist.sort()
-    tmpstr = ''.join(tmplist)
-    hashstr = hashlib.sha1(tmpstr).hexdigest()
-
-    if hashstr == signature:
-        return True
-    return False
 
 def parse_msg(rawmsgstr):
     """
@@ -146,19 +129,37 @@ def response_text_msg(msg, content):
     return s
 
 
-def response_news_msg(msg):
+def response_news_msg(msg, movie_list):
     msg_header = NEWS_MSG_HEADER_TPL % (msg['FromUserName'], msg['ToUserName'],
-                                        str(int(time.time())), 1)  # 括号里的内容不用反斜杠\就能换行
+                                        str(int(time.time())), len(movie_list))  # 括号里的内容不用反斜杠\就能换行
     msg = ''
     msg += msg_header
-    msg += make_articles()
+    msg += make_articles(movie_list)
     msg += NEWS_MSG_TAIL
     return msg
 
 
-def make_articles():
-    msg = NEWS_MSG_ITEM_TPL % ('ssss', 'ssss', '', 'http://www.baidu.com')
+def make_articles(movie_list):
+    msg = ''
+    for i, item in enumerate(movie_list):
+        msg += make_items(item, i+1)
     return msg
+
+
+def make_items(item, itemindex):
+    timeall = ''
+    price = ''
+    for i in item['time-price']:
+        timeall += item['time-price'][i] + ' '
+        price += i + ' '
+    title = u'%s\t场次%s元\n价格%s' % (item['name'], price, timeall)
+    description = ''
+    pic_url = ''
+    url = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua/3869/'
+    item = NEWS_MSG_ITEM_TPL % (title, description, pic_url, url)
+    return item
+
+
 
 
 
