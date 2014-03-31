@@ -154,7 +154,7 @@ def make_items(item, itemindex):
         price += i + ' '
     title = u'%s\t场次%s元\n价格%s' % (item['name'], price, timeall)
     description = ''
-    pic_url = ''
+    pic_url = item['pic']
     url = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua/3869/'
     item = NEWS_MSG_ITEM_TPL % (title, description, pic_url, url)
     return item
