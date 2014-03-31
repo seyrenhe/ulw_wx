@@ -51,6 +51,8 @@ def customer_msg():
             elif content == u'违规查询':
 
                 pass
+            elif content == u'测试':
+                return response_news_msg(msg)
             # 有天气两个字就调用天气模块
             elif content.find(u'天气')  > 0:
                 cityname = content[0:-2].encode('UTF-8')
@@ -64,36 +66,36 @@ def customer_msg():
 
 # @expose('/weixin', methods=['POST'])
 # def customer_msg():
-#     if utils.verification(request):
-#         data = request.data
-#         msg = parse_msg(data)
-#         if user_subscribe_event(msg):
-#             return help_info(msg)
-#         elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
-#             content = msg['Content']
-#             if content == u'今日电影':
-#                 cache = functions.get_cache()
+#     data = request.data
+#     msg = parse_msg(data)
+#     if user_subscribe_event(msg):
+#         return help_info(msg)
+#     elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
+#         content = msg['Content']
+#         if content == u'今日电影':
+#             cache = functions.get_cache()
 #
-#                 def tmovie():
-#                     """动态构建函数，供cache对像使用"""
-#                     return utils.moviespider()
+#             def tmovie():
+#                 """动态构建函数，供cache对像使用"""
+#                 return utils.moviespider()
 #
-#                 cache.get('tmovie', default='error', creator=tmovie)
-#                 my_movie_list = cache['tmovie']
-#                 recontent = utils.parse_movie_list(my_movie_list)
-#                 return response_text_msg(msg, recontent)
-#             elif content == u'违规查询':
+#             cache.get('tmovie', default='error', creator=tmovie)
+#             my_movie_list = cache['tmovie']
+#             recontent = utils.parse_movie_list(my_movie_list)
+#             return response_text_msg(msg, recontent)
+#         elif content == u'违规查询':
 #
-#                 pass
-#             # 有天气两个字就调用天气模块
-#             elif content.find(u'天气') != -1:
-#                 cityname = content[0:-2].encode('UTF-8')
-#                 weatherq = utils.weather.WeatherQuery(cityname)
-#                 recontent = weatherq.queryw()
-#                 return response_text_msg(msg, recontent)
+#             pass
+#         elif content == u'测试':
+#             return response_news_msg(msg)
+#         # 有天气两个字就调用天气模块
+#         elif content.find(u'天气') != -1:
+#             cityname = content[0:-2].encode('UTF-8')
+#             weatherq = utils.weather.WeatherQuery(cityname)
+#             recontent = weatherq.queryw()
+#             return response_text_msg(msg, recontent)
 #
-#             return help_info(msg)
-#
+#         return help_info(msg)
 #     return 'message processing fail'
 
 
@@ -144,6 +146,26 @@ def response_text_msg(msg, content):
     return s
 
 
+def response_news_msg(msg):
+    msg_header = NEWS_MSG_HEADER_TPL % (msg['FromUserName'], msg['ToUserName'],
+                                        str(int(time.time())), 1)  # 括号里的内容不用反斜杠\就能换行
+    msg = ''
+    msg += msg_header
+    msg += make_articles()
+    msg += NEWS_MSG_TAIL
+    return msg
+
+
+def make_articles():
+    msg = NEWS_MSG_ITEM_TPL % ('ssss', 'ssss', '', 'http://www.baidu.com')
+    return msg
+
+
+
+
+
+
+
 HELP_INFO = \
 u"""欢迎关注奉化生活^_^各种功能还在开发中,输入'今日电影'可以查博纳电影放映详情，输入'地名天气'，比如'奉化天气'可以查询奉化的天气。如果好用的话请别忘了推荐给你的小伙伴哦  by Seyren
 """
@@ -159,7 +181,6 @@ u"""
 </item>
 """
 
-
 TEXT_MSG_TPL = \
 u"""
 <xml>
@@ -172,3 +193,21 @@ u"""
 </xml>
 """
 
+NEWS_MSG_HEADER_TPL = \
+u"""
+<xml>
+<ToUserName><![CDATA[%s]]></ToUserName>
+<FromUserName><![CDATA[%s]]></FromUserName>
+<CreateTime>%s</CreateTime>
+<MsgType><![CDATA[news]]></MsgType>
+<Content><![CDATA[]]></Content>
+<ArticleCount>%d</ArticleCount>
+<Articles>
+"""
+
+NEWS_MSG_TAIL = \
+u"""
+</Articles>
+<FuncFlag>1</FuncFlag>
+</xml>
+"""
