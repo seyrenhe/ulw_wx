@@ -1,0 +1,707 @@
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Running on http://localhost:8888/[39m[49m[0m
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:12:32] "POST /weixin?signature=7d74b89bd9fa755eab03cd6ec846d84be10472ec&timestamp=1395979951&nonce=1343216378 HTTP/1.0" 200 -[39m[49m[0m
+[31m[ERROR root 2014-03-28 12:12:42,027] 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1167, in _open
+    response = self.call_view(mod, handler_cls, handler, req, res, kwargs=values)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 794, in call_view
+    result = self.call_handler(handler, request, response, env, wrap, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 889, in call_handler
+    result = self._call_function(handler, request, response, env, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 882, in _call_function
+    result = handler(*args, **kwargs)
+  File "apps/wx/views.py", line 55, in customer_msg
+    print content
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1221, in __call__
+    return response(environ, start_response)
+TypeError: 'exceptions.UnicodeEncodeError' object is not callable[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:12:42] "POST /weixin?signature=f5939e09ccfe6fedbef93586d324bbc3c288faac&timestamp=1395979959&nonce=349029203 HTTP/1.0" 500 -[39m[49m[0m
+[31m[ERROR root 2014-03-28 12:12:46,027] 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1167, in _open
+    response = self.call_view(mod, handler_cls, handler, req, res, kwargs=values)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 794, in call_view
+    result = self.call_handler(handler, request, response, env, wrap, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 889, in call_handler
+    result = self._call_function(handler, request, response, env, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 882, in _call_function
+    result = handler(*args, **kwargs)
+  File "apps/wx/views.py", line 55, in customer_msg
+    print content
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1221, in __call__
+    return response(environ, start_response)
+TypeError: 'exceptions.UnicodeEncodeError' object is not callable[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:12:46] "POST /weixin?signature=fec6517d41b177d6a73e69f92d3146f291bdfeb7&timestamp=1395979964&nonce=613402109 HTTP/1.0" 500 -[39m[49m[0m
+[31m[ERROR root 2014-03-28 12:12:57,801] 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1167, in _open
+    response = self.call_view(mod, handler_cls, handler, req, res, kwargs=values)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 794, in call_view
+    result = self.call_handler(handler, request, response, env, wrap, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 889, in call_handler
+    result = self._call_function(handler, request, response, env, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 882, in _call_function
+    result = handler(*args, **kwargs)
+  File "apps/wx/views.py", line 55, in customer_msg
+    print content
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1221, in __call__
+    return response(environ, start_response)
+TypeError: 'exceptions.UnicodeEncodeError' object is not callable[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:12:57] "POST /weixin?signature=2650475db071e6b09987bc3ff473179d886eb409&timestamp=1395979977&nonce=764631919 HTTP/1.0" 500 -[39m[49m[0m
+[31m[ERROR root 2014-03-28 12:13:07,804] 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1167, in _open
+    response = self.call_view(mod, handler_cls, handler, req, res, kwargs=values)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 794, in call_view
+    result = self.call_handler(handler, request, response, env, wrap, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 889, in call_handler
+    result = self._call_function(handler, request, response, env, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 882, in _call_function
+    result = handler(*args, **kwargs)
+  File "apps/wx/views.py", line 55, in customer_msg
+    print content
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1221, in __call__
+    return response(environ, start_response)
+TypeError: 'exceptions.UnicodeEncodeError' object is not callable[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:13:07] "POST /weixin?signature=34e5f7e780690eeac7679acf37fdb3d3eb91ef99&timestamp=1395979987&nonce=773455709 HTTP/1.0" 500 -[39m[49m[0m
+[31m[ERROR root 2014-03-28 12:13:09,355] 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1167, in _open
+    response = self.call_view(mod, handler_cls, handler, req, res, kwargs=values)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 794, in call_view
+    result = self.call_handler(handler, request, response, env, wrap, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 889, in call_handler
+    result = self._call_function(handler, request, response, env, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 882, in _call_function
+    result = handler(*args, **kwargs)
+  File "apps/wx/views.py", line 55, in customer_msg
+    print content
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1221, in __call__
+    return response(environ, start_response)
+TypeError: 'exceptions.UnicodeEncodeError' object is not callable[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:13:09] "POST /weixin?signature=e2f96ce481adef9b36fdda38df9ca510a8dcae88&timestamp=1395979988&nonce=1382586681 HTTP/1.0" 500 -[39m[49m[0m
+[31m[ERROR root 2014-03-28 12:13:10,659] 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1167, in _open
+    response = self.call_view(mod, handler_cls, handler, req, res, kwargs=values)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 794, in call_view
+    result = self.call_handler(handler, request, response, env, wrap, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 889, in call_handler
+    result = self._call_function(handler, request, response, env, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 882, in _call_function
+    result = handler(*args, **kwargs)
+  File "apps/wx/views.py", line 55, in customer_msg
+    print content
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1221, in __call__
+    return response(environ, start_response)
+TypeError: 'exceptions.UnicodeEncodeError' object is not callable[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:13:10] "POST /weixin?signature=097da6022d47b7dc54ba332bfbd0a06100ccaa63&timestamp=1395979990&nonce=21407586 HTTP/1.0" 500 -[39m[49m[0m
+[31m[ERROR root 2014-03-28 12:13:26,435] 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1167, in _open
+    response = self.call_view(mod, handler_cls, handler, req, res, kwargs=values)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 794, in call_view
+    result = self.call_handler(handler, request, response, env, wrap, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 889, in call_handler
+    result = self._call_function(handler, request, response, env, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 882, in _call_function
+    result = handler(*args, **kwargs)
+  File "apps/wx/views.py", line 55, in customer_msg
+    print content
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1221, in __call__
+    return response(environ, start_response)
+TypeError: 'exceptions.UnicodeEncodeError' object is not callable[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:13:26] "POST /weixin?signature=1de67c92c485dc4e86b280c1ea51a2d083b0ccbe&timestamp=1395980005&nonce=1848808872 HTTP/1.0" 500 -[39m[49m[0m
+[31m[ERROR root 2014-03-28 12:13:38,629] 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1167, in _open
+    response = self.call_view(mod, handler_cls, handler, req, res, kwargs=values)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 794, in call_view
+    result = self.call_handler(handler, request, response, env, wrap, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 889, in call_handler
+    result = self._call_function(handler, request, response, env, args, kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 882, in _call_function
+    result = handler(*args, **kwargs)
+  File "apps/wx/views.py", line 55, in customer_msg
+    print content
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 1221, in __call__
+    return response(environ, start_response)
+TypeError: 'exceptions.UnicodeEncodeError' object is not callable[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:13:38] "POST /weixin?signature=93529adb123af49cdc4cd4c7f4c06cc54b60d11f&timestamp=1395980017&nonce=1500634666 HTTP/1.0" 500 -[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Running on http://localhost:8888/[39m[49m[0m
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:34:24] "POST /weixin?signature=08287247100e6e791e18fcb20a451a82f92df768&timestamp=1395981261&nonce=2084127791 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:34:34] "POST /weixin?signature=156d400b4311769b3cdec49cab25c285c880e029&timestamp=1395981273&nonce=314793597 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:34:41] "POST /weixin?signature=630c73c0e8a5ad3e3bc486ba58ba392a942d951c&timestamp=1395981279&nonce=1647894858 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:35:00] "POST /weixin?signature=3430d0a2a2f1a3bad4769c5025fd88d700d07e75&timestamp=1395981299&nonce=1419026386 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:36:21] "POST /weixin?signature=2a5998cf776002e2c28f578add018dc639ef0f5e&timestamp=1395981316&nonce=1650977219 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO]  * Detected change in 'apps/utils/weather.py', reloading[39m[49m[0m
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 47967)
+----------------------------------------
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Running on http://localhost:8888/[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/bin/uliweb", line 9, in <module>
+    load_entry_point('Uliweb==0.2.6', 'console_scripts', 'uliweb')()
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/manage.py", line 1207, in main
+    call()
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/manage.py", line 1204, in call
+    execute_command_line(args or sys.argv, get_commands, 'uliweb', callback)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/commands.py", line 354, in execute_command_line
+    m.execute(callback)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/commands.py", line 328, in execute
+    cmd.run_from_argv(self.prog_name, subcommand, global_options, args[1:])
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/commands.py", line 153, in run_from_argv
+    self.execute(args, options, global_options)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/commands.py", line 175, in execute
+    self.handle(options, global_options, *args)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/manage.py", line 841, in handle
+    extra_files, 1, options.thread, options.processes, ssl_context=ctx)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/lib/werkzeug/serving.py", line 706, in run_simple
+    test_socket.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 224, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:44:20] "POST /weixin?signature=93fabd92e4908973bdd1e362cc0e3de3d6f4d936&timestamp=1395981854&nonce=68571386 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Running on http://localhost:8888/[39m[49m[0m
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:45:43] "POST /weixin?signature=75deebfdf44a0a531e6c0638fa705cf51ca25c2a&timestamp=1395981942&nonce=2053328782 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:46:06] "POST /weixin?signature=dcfae3f61c40a87bd42b54f9f7fde125ac180c55&timestamp=1395981964&nonce=1078614833 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 12:46:14] "POST /weixin?signature=9068650ac141f8f1bcd3dd46be9148090af94e66&timestamp=1395981972&nonce=2029762480 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Running on http://localhost:8888/[39m[49m[0m
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:18:35] "POST /weixin?signature=0d13bfc40c9db6fe6c491e2623cbedd4d38c16fe&timestamp=1395983913&nonce=464754674 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:28:24] "POST /weixin?signature=b45c5059c659d5f4cbaea5751f9eff268164bd12&timestamp=1395984502&nonce=1191012865 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:28:40] "POST /weixin?signature=dc08918c6a99588ee1628aef2e6b4f8535b09a3f&timestamp=1395984517&nonce=1341297166 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:30:35] "POST /weixin?signature=a139a148ec40f9ca81087970810312f096c17921&timestamp=1395984632&nonce=1945329786 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:33:56] "POST /weixin?signature=807c1b333f553de20afbd0c15f33552b80fac24b&timestamp=1395984835&nonce=47313489 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:34:08] "POST /weixin?signature=a14fa88cffe1c47b4ec6f9ad854e9f28426a7a2c&timestamp=1395984847&nonce=631831689 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:35:02] "POST /weixin?signature=da57daae54c9b1d2e9447ffda22b40c0b6481f66&timestamp=1395984900&nonce=1655552287 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:49:55] "POST /weixin?signature=82c9f8d9b786845ab5eb76ddb1c4f40989f2e33a&timestamp=1395985793&nonce=1007426618 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:50:21] "POST /weixin?signature=2a0511d381564b9d7e7459bc74e5f429c8b81889&timestamp=1395985819&nonce=2071061260 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:52:37] "POST /weixin?signature=a152f22869bbf4003c51c7677ea55ffb40d6572e&timestamp=1395985955&nonce=5826045 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 13:53:13] "POST /weixin?signature=bc9a125764b081b29098f1b4a96287a569845cd2&timestamp=1395985991&nonce=824757058 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 15:31:48] "POST /weixin?signature=08bc2aa5fee506587da6052d1c92c8343004ff79&timestamp=1395991907&nonce=116482856 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 16:30:24] "POST /weixin?signature=a57e53e697efe5fe7dd4ff5bd40f32a85f48bac0&timestamp=1395995412&nonce=25339959 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 16:30:26] "POST /weixin?signature=a853b0d2a891777481e0f47b4a141d26b77d4258&timestamp=1395995421&nonce=763428282 HTTP/1.0" 200 -[39m[49m[0m
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 48052)
+----------------------------------------
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Running on http://localhost:8888/[39m[49m[0m
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:05:43] "POST /weixin?signature=32b842ea4fbeb6e0e5bd1e8f0d2a2fbf6bb9ee80&timestamp=1395997543&nonce=1094337674 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:05:53] "POST /weixin?signature=92e3e351c66b6d813570b4510ad2b72e1531c4ee&timestamp=1395997551&nonce=746437210 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:06:05] "POST /weixin?signature=b0452c9429a0c09f10a51638d6625644c55c8dec&timestamp=1395997562&nonce=694215949 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:06:12] "POST /weixin?signature=a96b9b03b79546749201157dfb5d26deb15d816a&timestamp=1395997571&nonce=1925255150 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:06:26] "POST /weixin?signature=f51fe1a9b3931a8d652e3b69af7c82169d8ac7c8&timestamp=1395997579&nonce=1168645123 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:06:27] "POST /weixin?signature=f715f8d04f43ede3363c3043f5c4a5aaa4146e18&timestamp=1395997584&nonce=345187461 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:06:27] "POST /weixin?signature=d89f47ad8d84755cf71c6aa566115f53ac47483e&timestamp=1395997586&nonce=1735367670 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:06:34] "POST /weixin?signature=493d36148178d76234f1af506a2899a5889c2007&timestamp=1395997593&nonce=199992552 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:06:52] "POST /weixin?signature=370d668a3823eda34a8a650619cec1d70d461eb4&timestamp=1395997606&nonce=256784666 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:06:54] "POST /weixin?signature=04a6410c050ef5828ebf4597f140f092ef345273&timestamp=1395997610&nonce=439845676 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:07:28] "POST /weixin?signature=a5be8930c4ea05903763d0d1937f9a75bba0adb1&timestamp=1395997643&nonce=1654806562 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:07:42] "POST /weixin?signature=951466e3775c5034a1d5dbd10577db291f120ef9&timestamp=1395997654&nonce=113428081 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:07:46] "POST /weixin?signature=30f62d7022f2be5759ed3c9f5cbb01999fdebfd4&timestamp=1395997660&nonce=814331018 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:07:57] "POST /weixin?signature=5a58143f742c527266eeaf9f28c42964a4a499e6&timestamp=1395997675&nonce=1980793991 HTTP/1.0" 200 -[39m[49m[0m
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 48137)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 48139)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 48146)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 48152)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 48154)
+----------------------------------------
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Running on http://localhost:8888/[39m[49m[0m
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:24:52] "POST /weixin?signature=bc2a8f9794eeeaae38e715c5dac86d5b0c2c4f10&timestamp=1395998681&nonce=1079703024 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:25:04] "POST /weixin?signature=28d118ddad7459f5ba77f03b021061fb40697eb4&timestamp=1395998699&nonce=336086056 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:46:29] "POST /weixin?signature=4780562efc396b9a01a4cccda79898627fafbd94&timestamp=1395999986&nonce=1924951542 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:46:33] "POST /weixin?signature=9114af8b6628bcf19a09643b630c8215974770cb&timestamp=1395999992&nonce=273053048 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:46:38] "POST /weixin?signature=cc0bd50bde018323e0d2657d31681a67656c1576&timestamp=1395999996&nonce=1387270257 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:46:47] "POST /weixin?signature=9235320f3c61767db48ded441a5ff750418da493&timestamp=1396000006&nonce=1384987179 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:46:54] "POST /weixin?signature=0d308362057720e1d2654057577ed50d1b036fc5&timestamp=1396000012&nonce=1703359534 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:49:20] "POST /weixin?signature=b832758db4bd5dddfa24aae1a62e238ce48b495e&timestamp=1396000159&nonce=1475119989 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:49:25] "POST /weixin?signature=313b959071a332a8c417243f2de1d050827fc2b3&timestamp=1396000163&nonce=100643085 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:49:37] "POST /weixin?signature=9a266c9bb1e0e65414200c5d31a9e6638086a8c0&timestamp=1396000175&nonce=860031245 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:49:42] "POST /weixin?signature=602498b9a798b6d0156344e71f8ff2a1fb89ca8f&timestamp=1396000181&nonce=826925861 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:50:02] "POST /weixin?signature=59734f46ef21c89ae9b4dc75800b767b954f0f62&timestamp=1396000200&nonce=1671789105 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:50:51] "POST /weixin?signature=67c10f42fbc22bb56f36d8f3178e685022444858&timestamp=1396000250&nonce=675990574 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 17:50:57] "POST /weixin?signature=dd4ccada4f9a238781a5152cc542a7db6a28e18f&timestamp=1396000255&nonce=204707836 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 19:34:17] "POST /weixin?signature=a799272b19f33eb3ac9c35a7b90648de2feb7f09&timestamp=1396006456&nonce=1320169215 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO]  * Detected change in 'apps/utils/weather.py', reloading[39m[49m[0m
+----------------------------------------
+Exception happened during processing of request from ('127.0.0.1', 48201)
+----------------------------------------
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/local/bin/uliweb", line 9, in <module>
+    load_entry_point('Uliweb==0.2.6', 'console_scripts', 'uliweb')()
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/manage.py", line 1207, in main
+    call()
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/manage.py", line 1204, in call
+    execute_command_line(args or sys.argv, get_commands, 'uliweb', callback)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/commands.py", line 354, in execute_command_line
+    m.execute(callback)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/commands.py", line 322, in execute
+    command = self.fetch_command(global_options, subcommand)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/commands.py", line 254, in fetch_command
+    commands = self.get_commands(global_options)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/commands.py", line 231, in get_commands
+    commands = self.commands(global_options)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/manage.py", line 45, in get_commands
+    collect_commands()
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/manage.py", line 32, in collect_commands
+    local_settings_file=global_options.local_settings)
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 325, in get_apps
+    apps.extend(list(get_app_depends(app, visited)))
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 271, in get_app_depends
+    configfile = os.path.join(get_app_dir(app), 'config.ini')
+  File "/usr/local/lib/python2.7/dist-packages/uliweb/core/SimpleFrame.py", line 247, in get_app_dir
+    path = pkg.resource_filename(p[0], '')
+  File "/usr/lib/python2.7/dist-packages/pkg_resources.py", line 903, in resource_filename
+    return get_provider(package_or_requirement).get_resource_filename(
+  File "/usr/lib/python2.7/dist-packages/pkg_resources.py", line 213, in get_provider
+    __import__(moduleOrReq)
+  File "apps/utils/__init__.py", line 5, in <module>
+    import weather
+  File "apps/utils/weather.py", line 20
+    <<<<<<< HEAD
+    ^
+IndentationError: expected an indented block
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO]  * Running on http://localhost:8888/[39m[49m[0m
+[32m[INFO]  * Restarting with reloader[39m[49m[0m
+[32m[INFO]  * Loading DebuggedApplication...[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 20:45:46] "POST /weixin?signature=626d2b07207090803ef2593abbbbf1df6a1afe0d&timestamp=1396010744&nonce=74536801 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 20:46:01] "POST /weixin?signature=42a737f0d6706e742becc9d24ad843d7c245f3ad&timestamp=1396010760&nonce=1227381136 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 20:46:13] "POST /weixin?signature=b8479370a098b5c184b4c8bc0efc30d06e0be703&timestamp=1396010769&nonce=622720461 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 20:46:23] "POST /weixin?signature=b871bfd80d82f91e7400f9aba48af6428e6e7c8f&timestamp=1396010782&nonce=1787774080 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 20:46:31] "POST /weixin?signature=8a3b2bcc56f6c7e7bb89ca0bc793102da7eebdad&timestamp=1396010790&nonce=1416120045 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 20:46:41] "POST /weixin?signature=395bd3beb78b338d43bab6c5206d4a9851b87eaa&timestamp=1396010799&nonce=915682338 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 20:46:55] "POST /weixin?signature=722055fd2c4843f7503b0fff2d0d1d4eef3f2eae&timestamp=1396010813&nonce=170623148 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:07:11] "POST /weixin?signature=9233f541e3d4fdbb78180d7949fbaa5c6f815749&timestamp=1396012028&nonce=1729408371 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:07:23] "POST /weixin?signature=e3f4805c74f0880e73739062a563d691b52e657a&timestamp=1396012042&nonce=766262080 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:07:58] "POST /weixin?signature=7f0cc22071a7ca62f4b3bde96358ac29af1359a7&timestamp=1396012074&nonce=724674968 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:11:43] "POST /weixin?signature=b82797c2a9994d2b6fd5f2acb05edbd976789989&timestamp=1396012302&nonce=283220632 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:16:33] "POST /weixin?signature=ca2e67c8a24e22d989ee6f83aca78514b93c04a9&timestamp=1396012586&nonce=1537585175 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:16:37] "POST /weixin?signature=5aad451737567227515180ac030530a503464c55&timestamp=1396012593&nonce=720256064 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:16:50] "POST /weixin?signature=82a5bad74bd02ccbea87a792d85bf127c98742f5&timestamp=1396012610&nonce=1625450824 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:16:58] "POST /weixin?signature=8a3e837bc61db736266a42a59914fab325a431a8&timestamp=1396012617&nonce=2040000133 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:17:40] "POST /weixin?signature=416f9b10e7e33cb3829e9353465780ad7d723ded&timestamp=1396012659&nonce=983591787 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:17:56] "POST /weixin?signature=8ae79c09857ac2702ae5b59ef859e6c3924f2cd1&timestamp=1396012666&nonce=699147002 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:18:00] "POST /weixin?signature=feee075e792d89f622db4d995a1302b522bb05dc&timestamp=1396012675&nonce=1929242049 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:18:12] "POST /weixin?signature=1d6e0736eb853bd2706bd828480a73123f4f04b2&timestamp=1396012691&nonce=639107386 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 21:46:29] "POST /weixin?signature=7433505864e6e9fbfe38e53026b7ef92e00bc8a8&timestamp=1396014387&nonce=421218887 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:13:31] "POST /weixin?signature=52775edf8bb5bcd28124a0aedc59d9c79df239db&timestamp=1396016006&nonce=953050665 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:13:37] "POST /weixin?signature=d819516f6b21378530ffc54628b1c56f2dad8b2c&timestamp=1396016011&nonce=84758836 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:13:49] "POST /weixin?signature=8d21d19e331fc498c96f2272ddaa7267622f8159&timestamp=1396016027&nonce=1680836652 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:16:23] "POST /weixin?signature=8d44bd5e727b7c4256401177255034a976ef6c89&timestamp=1396016176&nonce=2001377398 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:16:27] "POST /weixin?signature=5f24d40a1eb19a7b0fee367f76028c1913de7534&timestamp=1396016182&nonce=777385595 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:16:51] "POST /weixin?signature=15ac69beea4dfaf8604bbba4b11711876706ad36&timestamp=1396016197&nonce=567828121 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:16:51] "POST /weixin?signature=498be53ab0a61dc968b7e3916c685ba0546815c5&timestamp=1396016201&nonce=1250721673 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:16:51] "POST /weixin?signature=784a97d707f22fc41a2eb9f7602f824114c37fec&timestamp=1396016206&nonce=1178805674 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:16:58] "POST /weixin?signature=ce55631b57b76ff1d57357369929eef471639c40&timestamp=1396016213&nonce=246056615 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:17:19] "POST /weixin?signature=34a43b0707709e7a59cee8d5319321400957f1f5&timestamp=1396016229&nonce=101871060 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:17:23] "POST /weixin?signature=984b3776636a3a4cb0fe524210bab4cf92ea8685&timestamp=1396016234&nonce=328913079 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:17:39] "POST /weixin?signature=bd76cb9cc3ff88b82ff898ec833b082c8d74b9d2&timestamp=1396016250&nonce=804751048 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:17:52] "POST /weixin?signature=27c46ec1294e8d36594ecdb7d307125aff9beaf9&timestamp=1396016266&nonce=48131502 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:18:40] "POST /weixin?signature=9b2277dda9b0725df9e90e6903052086283bbe1a&timestamp=1396016314&nonce=1749213124 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:18:51] "POST /weixin?signature=99548ba091e51e5eed2a1997a4f9e720210a0457&timestamp=1396016329&nonce=1368028953 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:19:11] "POST /weixin?signature=8b97e3d38f37f2af9946f26b007579b0a7716118&timestamp=1396016345&nonce=1074298475 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:19:17] "POST /weixin?signature=652b4e99f5342b3a2ce8515c824c750791f103a4&timestamp=1396016350&nonce=241019415 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:19:31] "POST /weixin?signature=a2f2fab9b976a0ef34b6c6d64f878c398a803914&timestamp=1396016365&nonce=268657650 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:19:54] "POST /weixin?signature=6f6743217e725acc10d185061a62a3f2b6e013b6&timestamp=1396016389&nonce=1758206706 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:19:57] "POST /weixin?signature=bcc0f388374f1a15d1463e75019cd503b8067e3f&timestamp=1396016394&nonce=141436119 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:20:06] "POST /weixin?signature=369b0d148b71c87c4fe3d0b27d546a069bc07ee2&timestamp=1396016404&nonce=1645569051 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:43:51] "POST /weixin?signature=c4a98d82daf49241f21028fa2018d9cb98d45cfc&timestamp=1396017825&nonce=88643179 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:44:02] "POST /weixin?signature=7ced33673b2876cba102071ae4abaa3c47765cc4&timestamp=1396017831&nonce=1480849325 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:44:06] "POST /weixin?signature=d543e929c16a1394c24c72a62995d80cd695d52a&timestamp=1396017840&nonce=1928854474 HTTP/1.0" 200 -[39m[49m[0m
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:44:21] "POST /weixin?signature=75e2879277075d1de3e7d478b24b4fb57e2a0840&timestamp=1396017855&nonce=1712088220 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:44:34] "POST /weixin?signature=7b42266fe4fcc804b27a5e952a5c4afc5cabb34e&timestamp=1396017873&nonce=854424145 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:44:45] "POST /weixin?signature=68cd62f2f6013aa89d6a4732f5acbea4f2e5a009&timestamp=1396017880&nonce=5160012 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:56:10] "POST /weixin?signature=340d531abcb87d5076f92264bd980d51a4a2f163&timestamp=1396018564&nonce=512716578 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [28/Mar/2014 22:56:13] "POST /weixin?signature=b702f2abffb74bd2aa44e27ff55f8e49d0a0e15a&timestamp=1396018570&nonce=1042456039 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 06:16:50] "POST /weixin?signature=56c2c49737c02045756fa16534a7bb23eef870f2&timestamp=1396045008&nonce=1093917872 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 06:19:34] "POST /weixin?signature=d3e49309c899bce88937a03d421e5daae58427d6&timestamp=1396045173&nonce=657838419 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 06:47:19] "POST /weixin?signature=25135d70ce7c3be23460b45063114dc55202e412&timestamp=1396046837&nonce=1116895080 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 06:47:32] "POST /weixin?signature=26665778158d2ce48a9a17519ec1be9cb1a367f7&timestamp=1396046850&nonce=603508016 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 06:47:47] "POST /weixin?signature=f8868489af6572241e687ea062a701d1c7e33d3d&timestamp=1396046865&nonce=885347 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 07:05:30] "POST /weixin?signature=8dd562966a614491b71ad17260150e2d04b1489c&timestamp=1396047929&nonce=108891229 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 07:07:04] "POST /weixin?signature=443c4e96934ef393e7d1439b5082a7fd1b5473ec&timestamp=1396048021&nonce=955216123 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 07:20:41] "POST /weixin?signature=9daf57533f3a924b68960dd1035947578c2c3c84&timestamp=1396048839&nonce=1684162279 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 07:29:44] "POST /weixin?signature=ec25625b5baaba17cab283dce99fbea91d55ebd5&timestamp=1396049384&nonce=738563063 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 12:57:42] "POST /weixin?signature=da6b2be2144a88ec0a8172f929979dcf265c374d&timestamp=1396069060&nonce=1141668867 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 13:05:10] "POST /weixin?signature=0f547403c2096242f5a7afa8a8bd039110ae917c&timestamp=1396069506&nonce=1283291609 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 13:05:14] "POST /weixin?signature=f4e247c0b00bd4cd574dcd4616ebd40747cf8f9b&timestamp=1396069513&nonce=1441247678 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 16:24:06] "POST /weixin?signature=5693c5b77474c5fd2c9cf8c10be7bac6e21e938a&timestamp=1396081442&nonce=1188824308 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 19:21:34] "POST /weixin?signature=769cfc3b6be43bd9bd58b765908d3d0df84ab2dd&timestamp=1396092093&nonce=729312213 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [29/Mar/2014 19:21:41] "POST /weixin?signature=8c0ea8efda86f68ae739956735fd1482bd73df09&timestamp=1396092099&nonce=1274723863 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [30/Mar/2014 12:23:21] "POST /weixin?signature=4f0c24033738a68135b2b1572ef6bf7165655df2&timestamp=1396153398&nonce=1649379312 HTTP/1.0" 200 -[39m[49m[0m
+[32m[INFO] 127.0.0.1 - - [30/Mar/2014 12:23:38] "POST /weixin?signature=75a3ebd4212a94917a15349a4458585993cb285b&timestamp=1396153416&nonce=1801611760 HTTP/1.0" 200 -[39m[49m[0m
