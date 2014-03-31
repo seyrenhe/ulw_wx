@@ -4,6 +4,74 @@ from bs4 import BeautifulSoup as bs
 import hashlib, time, json
 import weather
 
+
+
+def moviespider():
+    url1 = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua/3869/'
+    url2 = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua_yuelinjiedao/2834/'
+
+    page = urllib2.urlopen(url1)
+    soup = bs(page)
+
+    original = soup.find_all(class_='table')
+    m_count = len(original)
+    movie_list = []
+    for i in range(0, m_count):
+        # movie_time = ''
+        # movie_price = ''
+        movie_dict = {}
+        movie_dict_time = {}
+        movie_name = original[i].find(class_='c_000').text
+        movie_dict['name'] = movie_name
+        for t in original[i].find_all('b'):
+            p = t.previousSibling
+            #print "======>", p, t.contents[0]
+            movie_dict_time[t.contents[0].text] = p.text
+        # for t in original[i].find_all('strong'):
+        #     for p in original[i].find_all('em'):
+        #         movie_dict_time[t.text] = p.text
+        movie_dict['time-price'] = movie_dict_time
+        movie_dict['pic'] = original[i].find(class_='i_img')['src']
+        movie_dict['url'] = original[i].find(class_='c_000')['href']
+        # for t in original[i].find_all('strong'):
+        #     movie_time += t.text + ' '
+        # movie_dict['time'] = movie_time
+        # for p in original[i].find_all('em'):
+        #     movie_price += p.text + ' '
+        # movie_dict['price'] = movie_price
+        movie_list.append(movie_dict)
+    return movie_list
+
+
+def verification(request):
+    """
+    接入和消息推送校验
+    """
+    signature = request.GET.get('signature')
+    timestamp = request.GET.get('timestamp')
+    nonce = request.GET.get('nonce')
+
+    token = 'seyren'
+    tmplist = [token, timestamp, nonce]
+    tmplist.sort()
+    tmpstr = ''.join(tmplist)
+    hashstr = hashlib.sha1(tmpstr).hexdigest()
+
+    if hashstr == signature:
+        return True
+    return False
+
+
+def parse_movie_list(movie_list):
+    s = ''
+    for x in xrange(len(movie_list[0])):
+        for y in xrange(len(movie_list[1][x])):
+            s += movie_list[0][x] + movie_list[1][x][y] + movie_list[2][x][y] + '\n'
+    return s
+
+
+
+
 _time = time.strftime('%Y%m%d',time.localtime(time.time())) # 当前时间 格式为yearmonthday
 
 
@@ -42,61 +110,3 @@ _time = time.strftime('%Y%m%d',time.localtime(time.time())) # 当前时间 格�
 #     movie_list.append(movie_price)
 #
 #     return movie_list
-
-def moviespider():
-    url1 = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua/3869/'
-    url2 = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua_yuelinjiedao/2834/'
-
-    page = urllib2.urlopen(url1)
-    soup = bs(page)
-
-    original = soup.find_all(class_='table')
-    m_count = len(original)
-    movie_list = []
-    for i in range(0, m_count):
-        # movie_time = ''
-        # movie_price = ''
-        movie_dict = {}
-        movie_dict_time = {}
-        movie_name = original[i].find(class_='c_000').text
-        movie_dict['name'] = movie_name
-        for t in original[i].find_all('strong'):
-            for p in original[i].find_all('em'):
-                movie_dict_time[t.text] = p.text
-        movie_dict['time-price'] = movie_dict_time
-        movie_dict['pic'] = original[i].find(class_='i_img')['src']
-        # for t in original[i].find_all('strong'):
-        #     movie_time += t.text + ' '
-        # movie_dict['time'] = movie_time
-        # for p in original[i].find_all('em'):
-        #     movie_price += p.text + ' '
-        # movie_dict['price'] = movie_price
-        movie_list.append(movie_dict)
-    return movie_list
-
-
-def verification(request):
-    """
-    接入和消息推送校验
-    """
-    signature = request.GET.get('signature')
-    timestamp = request.GET.get('timestamp')
-    nonce = request.GET.get('nonce')
-
-    token = 'seyren'
-    tmplist = [token, timestamp, nonce]
-    tmplist.sort()
-    tmpstr = ''.join(tmplist)
-    hashstr = hashlib.sha1(tmpstr).hexdigest()
-
-    if hashstr == signature:
-        return True
-    return False
-
-
-def parse_movie_list(movie_list):
-    s = ''
-    for x in xrange(len(movie_list[0])):
-        for y in xrange(len(movie_list[1][x])):
-            s += movie_list[0][x] + movie_list[1][x][y] + movie_list[2][x][y] + '\n'
-    return s

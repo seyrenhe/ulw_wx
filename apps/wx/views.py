@@ -149,11 +149,11 @@ def make_articles(movie_list):
 def make_items(item, itemindex):
     time_price = ''
     for i in sorted(item['time-price'].keys()):
-        time_price += u'%s-%s' % (i, item[i])
+        time_price += u'%s-%s' % (i, item['time-price'][i]) + ' '
     title = u'%s' % item['name'] + time_price
     description = ''
     pic_url = item['pic']
-    url = 'http://theater.mtime.com/China_Zhejiang_Province_Fenghua/3869/'
+    url = item['url']
     item = NEWS_MSG_ITEM_TPL % (title, description, pic_url, url)
     return item
 

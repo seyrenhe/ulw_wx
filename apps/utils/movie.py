@@ -21,9 +21,10 @@ def moviespider():
         movie_dict_time = {}
         movie_name = original[i].find(class_='c_000').text
         movie_dict['name'] = movie_name
-        for t in original[i].find_all('strong'):
-            for p in original[i].find_all('em'):
-                movie_dict_time[t.text] = p.text
+        for t in original[i].find_all('b'):
+            p = t.previousSibling
+            #print "======>", p, t.contents[0]
+            movie_dict_time[t.contents[0].text] = p.text
         movie_dict['time-price'] = movie_dict_time
         movie_dict['pic'] = original[i].find(class_='i_img')['src']
         # for t in original[i].find_all('strong'):
