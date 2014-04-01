@@ -32,7 +32,8 @@ def moviespider():
         #         movie_dict_time[t.text] = p.text
         movie_dict['time-price'] = movie_dict_time
         movie_dict['pic'] = original[i].find(class_='i_img')['src']
-        movie_dict['url'] = original[i].find(class_='c_000')['href']
+        movie_number = original[i].find(class_='c_000')['href'].split('/')[3]
+        movie_dict['url'] = 'http://m.mtime.cn/#!/movie/%s/' % movie_number
         # for t in original[i].find_all('strong'):
         #     movie_time += t.text + ' '
         # movie_dict['time'] = movie_time
