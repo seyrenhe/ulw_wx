@@ -84,8 +84,7 @@ def customer_msg():
             # return response_text_msg(msg, recontent)
             return recontent
         elif content == u'违规查询':
-
-            pass
+            return for_single_item(msg)
         elif content == u'测试':
             return response_news_msg(msg)
         # 有天气两个字就调用天气模块
@@ -157,7 +156,19 @@ def make_items(item, itemindex):
     item = NEWS_MSG_ITEM_TPL % (title, description, pic_url, url)
     return item
 
-
+def for_single_item(msg):
+    msg_header = NEWS_MSG_HEADER_TPL % (msg['FromUserName'], msg['ToUserName'],
+                                        str(int(time.time())), 1)  # 括号里的内容不用反斜杠\就能换行
+    msg = ''
+    msg += msg_header
+    title = u'宁波交通局官方查询网站'
+    description = u'安全，放心'
+    picUrl = 'http://imgt2.bdstatic.com/it/u=1024854720,2703624734&fm=21&gp=0.jpg'
+    url = 'http://wf.nbjj.gov.cn'
+    item = NEWS_MSG_ITEM_TPL % (title, description, picUrl, url)
+    msg += item
+    msg += NEWS_MSG_TAIL
+    return msg
 
 
 
