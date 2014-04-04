@@ -27,74 +27,74 @@ def access_verify():
     return 'verification fail'
 
 
-@expose('/weixin', methods=['POST'])
-def customer_msg():
-    if utils.verification(request):
-        data = request.data
-        msg = parse_msg(data)
-        if user_subscribe_event(msg):
-            return help_info(msg)
-        elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
-            s1 = msg['Content'].strip()
-            content = ''.join(s1.split(' '))
-            if content == u'今日电影':
-                cache = functions.get_cache()
-
-                def tmovie():
-                    """动态构建函数，供cache对像使用"""
-                    movie_list = utils.moviespider()
-                    return response_news_msg(msg, movie_list)
-
-                cache.get('tmovie', default='error', creator=tmovie)
-                recontent = cache['tmovie']
-                return recontent
-            elif content == u'违规查询':
-                return for_single_item(msg)
-            # 有天气两个字就调用天气模块
-            elif content.find(u'天气')  > 0:
-                cityname = content[0:-2].encode('UTF-8')
-                weatherq = utils.weather.WeatherQuery(cityname)
-                recontent = weatherq.queryw()
-                return response_text_msg(msg, recontent)
-
-            return help_info(msg)
-
-    return 'message processing fail'
-
 # @expose('/weixin', methods=['POST'])
 # def customer_msg():
-#     data = request.data
-#     msg = parse_msg(data)
-#     if user_subscribe_event(msg):
-#         return help_info(msg)
-#     elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
-#         content = msg['Content']
-#         if content == u'今日电影':
-#             cache = functions.get_cache()
+#     if utils.verification(request):
+#         data = request.data
+#         msg = parse_msg(data)
+#         if user_subscribe_event(msg):
+#             return help_info(msg)
+#         elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
+#             s1 = msg['Content'].strip()
+#             content = ''.join(s1.split(' '))
+#             if content == u'今日电影':
+#                 cache = functions.get_cache()
 #
-#             def tmovie():
-#                 """动态构建函数，供cache对像使用"""
-#                 movie_list = utils.moviespider()
-#                 return response_news_msg(msg, movie_list)
+#                 def tmovie():
+#                     """动态构建函数，供cache对像使用"""
+#                     movie_list = utils.moviespider()
+#                     return response_news_msg(msg, movie_list, 'dy')
 #
-#             cache.get('tmovie', default='error', creator=tmovie)
-#             recontent = cache['tmovie']
-#             # recontent = utils.parse_movie_list(my_movie_list)
-#             # return response_text_msg(msg, recontent)
-#             return recontent
-#         elif content == u'违规查询':
-#             return for_single_item(msg)
-#         elif content == u'测试':
-#             return response_news_msg(msg)
-#         # 有天气两个字就调用天气模块
-#         elif content.find(u'天气') != -1:
-#             cityname = content[0:-2].encode('UTF-8')
-#             weatherq = utils.weather.WeatherQuery(cityname)
-#             recontent = weatherq.queryw()
-#             return response_text_msg(msg, recontent)
+#                 cache.get('tmovie', default='error', creator=tmovie)
+#                 recontent = cache['tmovie']
+#                 return recontent
+#             elif content == u'违规查询':
+#                 return for_single_item(msg)
+#             # 有天气两个字就调用天气模块
+#             elif content.find(u'天气')  > 0:
+#                 cityname = content[0:-2].encode('UTF-8')
+#                 weatherq = utils.weather.WeatherQuery(cityname)
+#                 recontent = weatherq.queryw()
+#                 return response_text_msg(msg, recontent)
 #
-#         return help_info(msg)
+#             return help_info(msg)
+#
 #     return 'message processing fail'
+
+@expose('/weixin', methods=['POST'])
+def customer_msg():
+    data = request.data
+    msg = parse_msg(data)
+    if user_subscribe_event(msg):
+        return help_info(msg)
+    elif is_text_msg(msg):  # 如果是文字消息就先返回帮助信息
+        content = msg['Content']
+        if content == u'今日电影':
+            cache = functions.get_cache()
+
+            def tmovie():
+                """动态构建函数，供cache对像使用"""
+                movie_list = utils.moviespider()
+                return response_news_msg(msg, movie_list, 'dy')
+
+            cache.get('tmovie', default='error', creator=tmovie)
+            recontent = cache['tmovie']
+            # recontent = utils.parse_movie_list(my_movie_list)
+            # return response_text_msg(msg, recontent)
+            return recontent
+        elif content == u'违规查询':
+            return for_single_item(msg)
+        elif content == u'测试':
+            return response_news_msg(msg)
+        # 有天气两个字就调用天气模块
+        elif content.find(u'天气') != -1:
+            cityname = content[0:-2].encode('UTF-8')
+            weatherq = utils.weather.WeatherQuery(cityname)
+            recontent = weatherq.queryw()
+            return response_text_msg(msg, recontent)
+
+        return help_info(msg)
+    return 'message processing fail'
 
 
 
@@ -127,11 +127,13 @@ def response_text_msg(msg, content):
     return s
 
 
-def response_news_msg(msg, movie_list):
+def response_news_msg(msg, movie_list, sty):
     msg_header = NEWS_MSG_HEADER_TPL % (msg['FromUserName'], msg['ToUserName'],
                                         str(int(time.time())), len(movie_list))  # 括号里的内容不用反斜杠\就能换行
     msg = ''
     msg += msg_header
+    if sty == 'dy':
+        msg += MOVE_NEWS_HEAD
     msg += make_articles(movie_list)
     msg += NEWS_MSG_TAIL
     return msg
@@ -148,7 +150,7 @@ def make_items(item, itemindex):
     time_price = ''
     for i in sorted(item['time-price'].keys()):
         time_price += u'%s-%s' % (i, item['time-price'][i]) + ' '
-    title = u'%s' % item['name'] + time_price
+    title = u'%s' % item['name'] + '\t' + time_price
     description = ''
     pic_url = item['pic']
     url = item['url']
@@ -219,4 +221,14 @@ u"""
 </Articles>
 <FuncFlag>1</FuncFlag>
 </xml>
+"""
+
+MOVE_NEWS_HEAD = \
+U"""
+<item>
+    <Title><![CDATA[令日电影]]></Title>
+    <Description><![CDATA[银泰电影院]]></Description>
+    <PicUrl><![CDATA[http://img31.mtime.cn/t/2013/01/23/142202.59770593.jpg]]></PicUrl>
+    <Url><![CDATA[]]></Url>
+</item>
 """
